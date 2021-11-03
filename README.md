@@ -33,3 +33,26 @@ Arthur 3 : Analysis of the phrasing of sentences: in a given sentence, according
 **Analyzing misconceptions:** The different quotes of celebrities and lesser-known individual reflect the current state of the global mindset: misconceptions, popular trends etc … By analyzing all those quotes, it is fathomable to document the evolution of general opinion by looking at correlations of events and certain opinions. As an example, there was for a long time a global belief that videogames made people violent. Looking at the temporal correlations between quotes surrounding tragic events such as school shootings and negative ones about videogames, we could observe whether the mindset changed over time and if the correlation between the two waned. More than studying the evolution of known associations, we could use it to detect other misconceptions that might be less obvious, by training an algorithm to look at quote’s correlations. With this approach we would also need to be weary of spurious correlations, which is something that can be complicated to detect for a program yet could also provide relevant information.
 
 **Answer:** Great and well-motivated idea. Good analysis of possible limitations. Be sure to keep it in mind during the development of the project.
+
+
+**Bastien**
+
+Starting with a simple Wikipedia search, we learn that "quotations can be used as language games to manipulate social order and the structure of society".
+If quotes are classified and crossed with documentation on the events that happened in the same period, predictions on the course of future events can be made. These future events can be, for example, of political or social nature. Since human groups/populations show predictable behaviors, with enough information, quite precise predictions can be made.
+**1.** On the economics side, a first application could be in finance. We could develop a neural network that considers the dataset QuoteBanks (date of publication, number of occurrences, type of newspaper publishing them) and cross-checks with the trends of the stockmarket (for example Kaggle’s "Huge Stock Market Dataset") . The network could deduce which newspapers and people are the most influential and predict the evolution of the marketplace. This would allow more intelligent investments and increase gains.
+On the political side, we can have the same approach. Instead of the trends of the stockmarket, we would use polls of intentions of vote or polls of opinions (for example, extract the data from https://yougov.co.uk/topics/politics/explore/issue/Voting_Intention). This will allow several analyses:
+* Find which types of language and speech (linguistics wise) appeal to which groups of population and better target them and understand them;
+* Have a tangible order of priority in decisions to make for political leaders;
+I have to admit these projects are quite self-serving. The first one is to make more money and the second is for populist purposes..
+
+*Feedback* : Why neural network? Could be a good idea but I would recommend to have the question in mind first, and then research what methods have been previously used for this purpose or which methods have not been used but could be promising. What could be the potential bias in the model? How explainable is your model?
+
+**2.** A more fun application could be a quote generator in the style of great public figures. If one lacks inspiration, one will just have to indicate one or more celebrities/writers, write a sentence, and the AI will suggest rewordings in the style of these writers. The operation would be similar to that of DeepL. 
+Our network will have to work out which figures of speech and subtle nuances that characterise authors' styles.
+If the differences in style throughout the years are striking for the same writer, a study of the factors and events that could have changed the style could be conducted as well, and attempt to explain some phenomena observed in linguistics.
+
+*Feedback* : This is a great and fun idea. Looking forward to see the results. What could be the implications of this work? Are there any ethical considerations?
+ 
+**3.** The last project is more targeted towards students studying humanities. The goal of our program will be to find an appropriate quotation for a given pragraph of an essay. Indeed, quotations are a means of inspiration and invoke philosophical thoughts from the reader. Adding a well thought and pertinent quotation that is adapted to the tone and subject of the paragraph will add force to the arguments.
+
+*Feedback* : How would you do this? Which external datasets do you need? How are you planning on getting them?
