@@ -30,6 +30,8 @@ We would need to filter common words such as coordinating conjunctions to not fl
 To facilitate the data analysis, we aim to build a database from the given quotebanks sub-dataset related to the event of interest and the wikidata dumps 
 The database will resemble the following (diagram drawn according to crow’s foot notation). 
 
+![alt text](https://github.com/epfl-ada/ada-2021-project-les-quatre-neurones/blob/master/DB_ER_diag_ADA.png?raw=true)
+
 In order to get the database, some transformations are needed. We listed the ones we thought we could do for all the years, since for this milestone we did it mostly for the 2020’s dataset. 
 
 Here are some of the data cleaning steps already followed for a first preparation of the database.
