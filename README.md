@@ -1,58 +1,89 @@
 
-**PROPOSITIONS PROJECT**
+# README
 
-Tatiana: 
-Proposal 1: What’s the influence of the speaker or her/his quote?
-I would find it interesting to analyse the impact of the quote in society through different options. One could imagine to try to find the origin (type of communication) of the quote via the links of the articles and to see the reaction of people through social networks, for example if it’s in an article or a book, we could look at how many times it has been quoted. I would also find it interesting to find a way to link to the h-index of the author of the quote if she/he has one. 
-*Feedback*: I really liked that you start every proposal with a main research question. Perhaps you could try to break down the main question into smaller ones and smaller tasks so that they are easier to answer.
+## Evolution in time of the perception of events by social groups. Case studies.
 
-Proposal 2: Are quotes linked to an event? 
-One could imagine trying to track all the events that took place during a year, for example, just by trying to group quotes by context, words and dates. If the quotes are listed by context one could try to find a dataset that contains the important events related to the topic. If we look for example at the word in the dataset “Brexit,” we can see that 43 quotes out of 338 quotes (~12%) were in December and if we look in the Wikipedia page “2019 in the United Kingdom”, we see that on December 20th, MPs voted for the Brexit withdrawal agreement, “paving the way for the UK to leave the EU on January 31, 2020”. There’s surely a link, but it would be necessary to push the analysis.
-*Feedback*: Great motivation and example. It would be great if you started thinking about possible ways (methods) to answer your questions. How are you going to group the quotes? Are you going to focus on all topics of specific ones? What are some possible hypotheses?
+### Abstract
+Around events that attract global attention, any person is bound to state their opinion. Our goal is to visualise the evolution in time of the mindset of different personalities involved in an event, from close or afar, to potentially uncover patterns in human behavior. To successfully do this we distinguish classes among people, which can be achieved by considering the content of their speech. For this, we will use the dataset QuoteBank, which gathers millions of quotes of a large panel of public figures. By identifying keywords we can encapsulate the tone and a person’s feeling about an event or a situation. To get a more in depth understanding of the reason for the change in speech, the background and characteristics of the person are added to the dataset studied.
+To put the results into perspective, the tone, publication of date and time of the articles in which the quote was cited are added to the dataset. 
 
-Proposition 3: What’s the feeling in the quotes? 
-We could start by trying to understand whether the quote is turned in a positive or negative way (we could make other comparisons). Depending on the context of the quote, we could try to imagine a way to trace the general feeling in the context over several years. Then check if different contexts are also related to this general feeling. The Covid has influenced everyone’s life, and I would have found it interesting through quotes to see how much it has affected or influenced in certain contexts.
-*Feedback*: I like this idea. I would suggest to see how it affects different populations (age groups, gender, nationalities, etc).
+### Research Questions
+- What information about the speaker's mindset does a quote convey about an event ? 
+- Are there relevant “classes” that people could be sorted in ? Are they easily identifiable ? 
+- Are there classes that are more prone to change their views before and after the event ? If yes, what are the most common patterns in the changes observed?
 
-Arthur 1 : Speak like someone: by analyzing quotes and linking them to their most probable author, one could imagine building a model that can help speak like someone else. For example, the model would analyze how a notorious politician speaks, find a generic pattern in the declarations he makes, the expression he usually employs… Finally, the model would then be used to speak like (or avoid speaking like) the original character studied. A new politician could for example scan a speech he’s about to make and see how much he’s going to sound like someone else, then decide to adapt his speech in consequence. _Feedback_ : _What could be the implications of this work? Are there any ethical considerations?_
+These research questions lead to underlying, more pragmatic problematics.
+For example, we need to identify the emotions in a quote and the specific keywords that vehicle these emotions. This can be done through the use of external natural language processing APIs.
 
-Arthur 2 : The influence of keywords: the goal would be to compare different people’ takes of the same event, to see how the choice of keywords, the phrasing of a sentence, can influence the readers’ opinions. In the first place, one should select an event that was widely covered by people from different backgrounds and political orientation (e.g., a presidential election) and compare how they differ. One should then compare the general tone of the declaration by the people from each background, analyze everyone’s confidence, how the speeches change as the event approaches, what happens when unlikely events arise (e.g., political scandals) and see how much the declaration they make before the election do come true afterwards. Since we have data from 2008 to 2020, we can cross-validate the conclusions we make with what truly happened during that time (in the example of elections). _Feedback :  This idea is fantastic! Which external datasets do you need? How are you planning on getting them?_
+Another question is to which event is the quote related and what are the timestamps of the quote and the article compared to the event ?
 
-Arthur 3 : Analysis of the phrasing of sentences: in a given sentence, according to how it is formulated, it can have a different meaning. For example, in the sentence: “I’m watching the man with binoculars”, are we watching a man through binoculars, or are we watching a man who is holding binoculars? We can think of analyzing a pool of quotes from each speaker in the hope of clarifying the quotes that can be interpreted in several ways, according to how the speaker usually phrases his/her quotes, and perhaps cross-check it with online dictionaries to get the most probable meaning. We would need to give more importance to the recent data, since something one has said in 2010 might be less relevant than something he said in 2019. The model should also be able to detect sarcasm or irony. In short, the ultimate goal would be to be able to paraphrase correctly a given unclear quote. _Feedback : What is the motivations? Who could benefit from this? Sarcasm and irony are the hardest emotions to detect, I am looking forward to see your findings!_
+A quote can be used in various contexts and the messages it vehicles either be supported or dismissed by the quoter. Using natural language processing again, we can identify the general feeling of the article towards the quote or the event described.
 
-**Benjamin:**
+As a bonus : Another research question could to what extent do the words of some people influence the course of action, or does it work the other way round ? Which public figures tend to be the most influential ?
 
-**Predicting emerging diseases:** Especially now, we must take every precaution to prevent the spread of infectious diseases, and the behavior of people can help us. Experts might warn people of a certain threat, but most often people will talk of symptoms of diseases unknowingly, by confusing them with another or just being completely oblivious to them. Symptoms of a disease vary depending on the person and by crosslinking information coming from various persons regarding their physical state, in the same geographical region, can be determinant to detect an outbreak. Another source of information would be if they said they visited a foreign country, where a certain disease is very prevalent, which could be a queue to monitor symptoms of said disease where the speaker lives. By analyzing patterns of past epidemics, we could develop algorithms to predict and anticipate such events, but we could also pinpoint dangerous behaviors or areas.
+### Methods
+In order to build an accurate method to analyse any new event and the way people’s minds vary about it, we need to start with known events and the people who commented on them. Additional information on these people is added and mandatory to define characteristic classes and identify if there is a correlation between their traits and their behaviour.
 
-**Answer:** How are you planning on using Quotebank for this? What extra information do you need? How are you planning on obtaining it? The idea is promising but I am not sure how feasible it is. To train the model, you would need the “quotes” from previous epidemics. 
+This eventually allows to pinpoint leads for keywords associated with differing views (as a simple example, the word “lies” would often appear in quotes of people against a certain person running for presidency).
+We would need to filter common words such as coordinating conjunctions to not flood the relevant information. 
 
-**Catching fake news:** Spreading of misinformation is common currency on the web, and most often people with influence are the biggest vectors of such transmission. With the amount of data offered by Quotebank, we could imagine studying known cases of fake news: looking at what caused its worldwide transmission, how it started and most interestingly, for how long it was present before it became known. A useful metric for such information is how much the event is quoted and by how “famous” the people talking about it are. By studying and analyzing this phenomenon, we could potentially uncover patterns for the spread of such information depending on many parameters: The speakers, the country of origin, the relationship to current events. As said, it would be interesting to study fake news of which we know the origin, but the next goal would be to trace back the origin of unknown ones using the patterns uncovered, and even afterwards detect facts that could be fake, should they present similarities with the ones we know.
+To facilitate the data analysis, we aim to build a database from the given quotebanks sub-dataset related to the event of interest and the wikidata dumps 
+The database will resemble the following (diagram drawn according to crow’s foot notation). 
 
-**Answer:** Good motivation. The ideas are great but they seem sparse. It would be great if you could come up with a main research question that encompasses the different subtopics and then branch to the specific research questions 
+In order to get the database, some transformations are needed. We listed the ones we thought we could do for all the years, since for this milestone we did it mostly for the 2020’s dataset. 
 
-**Analyzing misconceptions:** The different quotes of celebrities and lesser-known individual reflect the current state of the global mindset: misconceptions, popular trends etc … By analyzing all those quotes, it is fathomable to document the evolution of general opinion by looking at correlations of events and certain opinions. As an example, there was for a long time a global belief that videogames made people violent. Looking at the temporal correlations between quotes surrounding tragic events such as school shootings and negative ones about videogames, we could observe whether the mindset changed over time and if the correlation between the two waned. More than studying the evolution of known associations, we could use it to detect other misconceptions that might be less obvious, by training an algorithm to look at quote’s correlations. With this approach we would also need to be weary of spurious correlations, which is something that can be complicated to detect for a program yet could also provide relevant information.
+Here are some of the data cleaning steps already followed for a first preparation of the database.
+- Quotes: 
+    - remove stop words (and, the, ...)
+    - stemming and lemming the quotes
+    - use NLTK function in order to categorize the words in the sentence for example
+- Speakers: 
+    - Keep the speakers that are not "None"
+    - See if a person has multiple names and decide how we want to proceed.
+    - Add features about the speakers using the file speaker_attributes.parquet
+    - Find all the attributes that we need to complete the dataset (QIDS and labels)
+- Date and quoteID:  
+    - Keep only the relevant informations in the date or quoteID
+- Remove columns that we don’t use
 
-**Answer:** Great and well-motivated idea. Good analysis of possible limitations. Be sure to keep it in mind during the development of the project.
+### Proposed Additional Datasets:
+The provided speaker_attributes.parquet file gives us information about the speakers and will be essential for our project. The wikidata dumps would allow us to find interesting information about the different speakers. One of the most important points will be to be able to find the labels of the QIDS because even if these identifications are good to make our analyses, if we want to be able to interpret our results, we need their "definitions"/”meaning”.
 
+### Proposed Timeline & Organisation with the team:
 
-**Bastien**
+Week 9
+- Strategy :
+Take a first small but polarising event to develop a standard data analysis process adapted to our approach. First concentrate only on the public figures that have quotes related to the event. We will see if we have time to consider the “general public”. 
 
-Starting with a simple Wikipedia search, we learn that "quotations can be used as language games to manipulate social order and the structure of society".
-If quotes are classified and crossed with documentation on the events that happened in the same period, predictions on the course of future events can be made. These future events can be, for example, of political or social nature. Since human groups/populations show predictable behaviors, with enough information, quite precise predictions can be made.
-**1.** On the economics side, a first application could be in finance. We could develop a neural network that considers the dataset QuoteBanks (date of publication, number of occurrences, type of newspaper publishing them) and cross-checks with the trends of the stockmarket (for example Kaggle’s "Huge Stock Market Dataset") . The network could deduce which newspapers and people are the most influential and predict the evolution of the marketplace. This would allow more intelligent investments and increase gains.
-On the political side, we can have the same approach. Instead of the trends of the stockmarket, we would use polls of intentions of vote or polls of opinions (for example, extract the data from https://yougov.co.uk/topics/politics/explore/issue/Voting_Intention). This will allow several analyses:
-* Find which types of language and speech (linguistics wise) appeal to which groups of population and better target them and understand them;
-* Have a tangible order of priority in decisions to make for political leaders;
-I have to admit these projects are quite self-serving. The first one is to make more money and the second is for populist purposes..
+- Further data cleaning and transformation (Tatiana)
 
-*Feedback* : Why neural network? Could be a good idea but I would recommend to have the question in mind first, and then research what methods have been previously used for this purpose or which methods have not been used but could be promising. What could be the potential bias in the model? How explainable is your model?
+- DataBase (Bastien)
 
-**2.** A more fun application could be a quote generator in the style of great public figures. If one lacks inspiration, one will just have to indicate one or more celebrities/writers, write a sentence, and the AI will suggest rewordings in the style of these writers. The operation would be similar to that of DeepL. 
-Our network will have to work out which figures of speech and subtle nuances that characterise authors' styles.
-If the differences in style throughout the years are striking for the same writer, a study of the factors and events that could have changed the style could be conducted as well, and attempt to explain some phenomena observed in linguistics.
+- Choice of events (Arthur) : Choose several other events, of various location and different scales (local, national, international) to study a large variety
+Start GitHub.io
 
-*Feedback* : This is a great and fun idea. Looking forward to see the results. What could be the implications of this work? Are there any ethical considerations?
- 
-**3.** The last project is more targeted towards students studying humanities. The goal of our program will be to find an appropriate quotation for a given pragraph of an essay. Indeed, quotations are a means of inspiration and invoke philosophical thoughts from the reader. Adding a well thought and pertinent quotation that is adapted to the tone and subject of the paragraph will add force to the arguments.
+Emotion (Benjamin)
+test how to apply NLTK to quotes and articles draw a basic list of emotions
 
-*Feedback* : How would you do this? Which external datasets do you need? How are you planning on getting them?
+Week 10
+- Events selected: (all)
+  - apply the tools developed the previous week 
+  - Identify classes of people and cross check between events. 
+  - Identify patterns in the evolution of behaviours
+  - Improve sentiment analysis algorithm according to the events selected (Benjamin)
+
+First ideas for data visualisation (Arthur) and documentation  
+
+Week 11
+- Check correlation between data and behaviours. (Benjamin, Tatiana)
+- Start coding the website with the first case studies (Arthur, Bastien)
+- add more complex case studies. (all)
+
+Week 12
+- All the case studies finished
+- structure of the presentation finished
+- Practical conclusions on the classes of people, the patterns of how the mindset changes and underlying factors.
+
+Week 13
+
+Finishing the website (all)
