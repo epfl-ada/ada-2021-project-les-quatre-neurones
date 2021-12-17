@@ -1,11 +1,47 @@
+# README
+
+## Projet Idea 
+
+## Datastory 
+
+You can find our datastory here: https://arthurbrousse.github.io/
+
+## Notebooks
+
+Our processing is splitted in 5 main notebooks for better modularity and parallel optimisation if needed, and correspond to the main steps of the analysis provided in the datastory 
+
+### Data Processing 
+
+This notebook is the first step of data processing for the enourmous quantity of data provided by quotebank. We select the columns that interest us in all of the data and imports it as a json, keeping the most attribute, being the Qids. It is then used in the scond part of this notebook, where we use this ID to gather information about the speaker and 
+
+### Quote Extraction
+
+### Topic Analysis
+
+### Emotional Pipeline
+
+This notebook takes as an input the ones processed by the quotes extraction, and does not need the information of the topic. In essence, it will take these quotes, perform some baseline NLP, but as little as possible since we are doing sentiment analysis, which need detail in order to understand as much as possible the subtilities of the emotions conveyed by the sentence. Once the quotes are cleaned, they pass through 3 algorithms of emotion analysis: 
+
+- VADER, the main one, is a lexicon based algorithm that outputs a compoud score that indicates the relative sentiment of the score, with -1 the most negative and 1 the most positive. We chose it as the main study tool since it outputs a continuous score which is easier to study. However, by analysing it manually we found discrepancies, sentences that were intepreted as negative by VADER but actually were quite positive. Therefore we decided to use another method as a support.
+- BERT is a kind of neural network develloped for Natural Language Processing, which is based on a transformer network, that has been develloped and pre-trained for sentiment analysis. The difference with VADER is that it outputs a "review" score of a discrete value between 1 and 5, with 1 the lowest emotion score and 5 the highest. This already gives us quite a ground for analysis but when digging further, we noticed that they would sometimes give opposing scores. As a resut, we used a third algorithm as a confirmatory one.
+- Text2Emotion is another python library that performs sentiment anlysis, but is more oriented towards precise emotions, but by associating them to their overall sentiment (i.e. Sad = Negative), we can use it as a tie-breaker in case of contrary results from VADER and BERT 
+
+The vibe_check() function does exactly that, by cross checking the values of VADER, BERT and Text2Emotion, and correctif if needed. The correction it performs is that if VADER and BERT are in complete opposition, the emotion indicated by Text2Emotion breaks the tie, increasing or decreasing the VADER score if both BERT an the Text2Emotion went against it.
+
+Following this analyis, we take advantage of the fact that the dataframes are already processed to analyse the distibutions of occupations of the speakers, and of other attributes that were of interest at some point 
+
+### Plots 
+
+
+------ Milestone 2 --------
+
 
 # README
 
 ## Evolution in time of the perception of events by social groups. Case studies.
 
 ### Abstract
-Around events that attract global attention, any person is bound to state their opinion. Our goal is to visualise the evolution in time of the mindset of different personalities involved in an event, from close or afar, to potentially uncover patterns in human behavior. To successfully do this we distinguish classes among people, which can be achieved by considering the content of their speech. For this, we will use the dataset QuoteBank, which gathers millions of quotes of a large panel of public figures. By identifying keywords we can encapsulate the tone and a person’s feeling about an event or a situation. To get a more in depth understanding of the reason for the change in speech, the background and characteristics of the person are added to the dataset studied.
-To put the results into perspective, the tone, publication of date and time of the articles in which the quote was cited are added to the dataset. 
+
 
 ### Research Questions
 - What information about the speaker's mindset does a quote convey about an event ? 
