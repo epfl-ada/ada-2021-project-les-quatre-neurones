@@ -15,7 +15,7 @@ In the second part, we used the the speaker_attributes.parquet in order to find 
 
 ### Quote Extraction
 
-This notebook comes second in the pipeline. It simply fetches quotes from the json.bz2 files (created in the above step) from a selected list of keywords. These lists changes for each year, since new car models are released each year. The quotes are then saved to simple json files and transformed to pandas dataframes, if further treatmen wants to be done in the same notebook by a user.
+This notebook comes second in the pipeline. It simply fetches quotes from the json.bz2 files (created in the above step) from a selected list of keywords. These lists change for each year, since new car models are released every year. The quotes are then saved to simple json files and transformed to pandas dataframes, if further treatment wants to be done in the same notebook by a user of the notebook.
 
 ### Topic Analysis
 
