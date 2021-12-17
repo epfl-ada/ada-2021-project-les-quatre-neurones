@@ -16,7 +16,18 @@ This notebook is the first step of data processing for the enourmous quantity of
 
 ### Quote Extraction
 
+This notebook comes second in the pipeline. It simply fetches quotes from the json.bz2 files (created in step above) from a selected list of keywords. These lists change for each year since new car models are released each year. The quotes are then saved to simple json files and transformed to pandas dataframes if further treatmen wants to be done in the same notebook by a user;
+
 ### Topic Analysis
+
+This notebook reads the .json files of quotes from previous step and does a cleaning of the batches of quotes. Namely, it removes all special characters, punctuation and spaces from the quotes, then tokenises and removes stopwords from texts in list. For the latter part, NLTK's stopwords list is used. 
+The next step is to remove quotes that are too similar. Indeed, some quotes are just substrings or reorderings of other quotes. In order to only keep the essential quote, the notebook builds a TF-IDF matrix using sklearn's TfidfVectorizer method. The similarity between quotes is assessed and we can proceed to selection. 
+
+This way, the batch of quotes is reduced and topic analysis can be performed. This is done using gensim's LDA methods. Only one topic consisting of 6 words is computed for each month. This allows to identify events with words that are of more than ordinary interest. 
+
+The words in the topics are then translate to cloud of words for visualisation.
+
+
 
 ### Emotional Pipeline
 
