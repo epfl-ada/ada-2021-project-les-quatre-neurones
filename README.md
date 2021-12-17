@@ -10,7 +10,8 @@ Our processing is splitted in 5 main notebooks for better modularity and paralle
 
 ### Data Processing 
 
-This notebook is the first step of data processing for the enourmous quantity of data provided by quotebank. We select the columns that interest us in all of the data and imports it as a json, keeping the most attribute, being the Qids. It is then used in the scond part of this notebook, where we use this ID to gather information about the speaker and 
+This notebook is the first step of data processing for the enourmous quantity of data provided by quotebank. We selected the columns that interest us in all of the data (date, quotation, quoteID, QIDS). For this we used the code of the Google Colab and put the selected columns in a new json file.
+In the second part, we used the the speaker_attributes.parquet in order to find the label of each QIDS. We used the library BeautfiulSoup in order to access the wikidata page of each QIDS for parsing the page and finding the label. Some url are broken (put in comment in the notebook), we decided to remove them from the list and replace them by a zero in the each label column. We have a json for each attrribute with the QIDS and their corresponding labels.
  
 ### Quote Extraction
 
