@@ -10,13 +10,9 @@ Our processing is splitted in 5 main notebooks for better modularity and paralle
 
 ### Data Processing 
 
-<<<<<<< HEAD
 This notebook is the first step of data processing for the enourmous quantity of data provided by quotebank. We selected the columns that interest us in all of the data (date, quotation, quoteID, QIDS). For this we used the code of the Google Colab and put the selected columns in a new json file.
 In the second part, we used the the speaker_attributes.parquet in order to find the label of each QIDS. We used the library BeautfiulSoup in order to access the wikidata page of each QIDS for parsing the page and finding the label. Some url are broken (put in comment in the notebook), we decided to remove them from the list and replace them by a zero in the each label column. We have a json for each attrribute with the QIDS and their corresponding labels.
-=======
-This notebook is the first step of data processing for the enormous quantity of data provided by Quotebank. We select the columns that interest us in all of the data and imports it as a json, keeping the most attribute, being the Qids. It is then used in the second part of this notebook, where we use this ID to gather information about the speaker and 
->>>>>>> 5343ff5c53e295a0fbeb64710f94897facab2be5
- 
+
 ### Quote Extraction
 
 This notebook comes second in the pipeline. It simply fetches quotes from the json.bz2 files (created in the above step) from a selected list of keywords. These lists changes for each year, since new car models are released each year. The quotes are then saved to simple json files and transformed to pandas dataframes, if further treatmen wants to be done in the same notebook by a user.
